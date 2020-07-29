@@ -12,28 +12,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 
 public class SearchStepDefs {
-    SearchResultsPage searchResultPage = new SearchResultsPage();
+    SearchResultsPage searchResultsPage = new SearchResultsPage();
     ProductDetailPage productDetailPage = new ProductDetailPage();
     CartPage cartPage= new CartPage();
 
-    @Given("user should be on url")
-    public void user_should_be_on_url() {
-        Driver.get().navigate().to(ConfigurationReader.get("url"));
-    }
-
     @Then("user should write {string} into search box")
     public void user_should_write_into_search_box(String string) {
-        searchResultPage.searchbox.sendKeys(string);
+        searchResultsPage.searchbox.sendKeys(string);
     }
 
     @Then("user should click search button")
     public void user_should_click_search_button() {
-        searchResultPage.searchButton.click();
+
+        searchResultsPage.searchButton.click();
     }
 
     @Then("user should locate {string} in list and click")
     public void user_should_locate_in_list_and_click(String string) {
-        Driver.get().findElement(By.xpath("//*[text()='"+ string+"']")).click();
+
+        searchResultsPage.selectFromResults(string);
     }
 
     @Given("user should choose {string} and {string} and add it to cart")

@@ -11,9 +11,8 @@ public class PriceValidationStepDefs {
     HomePage homePage =new HomePage();
     FilterPage filterPage = new FilterPage();
 
-    @Given("user should click {string} from main menu and {string} from submeonu")
-    public void user_should_click_from_main_menu_and_from_submeonu(String menu, String submenu) {
-        Driver.get().navigate().to(ConfigurationReader.get("url"));
+    @Given("user should click {string} from main menu and {string} from submenu")
+    public void user_should_click_from_main_menu_and_from_submenu(String menu, String submenu) {
         homePage.navigateToSubMenu(menu, submenu);
     }
 
@@ -24,16 +23,11 @@ public class PriceValidationStepDefs {
         filterPage.findPriceRange(minValueString, maxValueString);
     }
 
-
     @Then("prices should be betwwen {int} and {int}")
     public void prices_should_be_betwwen_and(Integer minValue, Integer maxValue) {
         boolean flag= filterPage.checkPriceRange(minValue,maxValue);
         Assert.assertTrue(flag);
     }
 
-    @Then("user should validate filter applied correctly")
-    public void user_should_validate_filter_applied_correctly() {
-
-    }
 
 }

@@ -30,10 +30,7 @@ public abstract class BasePage {
     @FindBy(xpath = "//a[contains(@href,'http://www.ctqatest.biz/ecom/customer/account/')][contains(@title,'My Account')]")
     public List<WebElement> accountSubLink_bottomLink;
 
-    @FindBy(xpath="//*[text()='Invalid login or password.']")
-    public WebElement errorMessageForInvalid;
 
-    @FindBy(xpath="//*[text()='This is a required field.']")
-    public List<WebElement> errorMessageForEmpty;
+
 
 }

@@ -9,7 +9,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class LoginStepDefs {
+
     LoginPage loginPage = new LoginPage();
+
     @Given("the user is on the home page")
     public void the_user_is_on_the_home_page() {
         String url = ConfigurationReader.get("url");
@@ -22,9 +24,9 @@ public class LoginStepDefs {
     loginPage.loginLink.click();
 
     }
+
     @When("the user login with invalid credentials")
     public void the_user_login_with_invalid_credentials() {
-
         String username = ConfigurationReader.get("invalid_username");
         String password = ConfigurationReader.get("invalid_password");
         loginPage.login(username,password);
@@ -48,7 +50,6 @@ public class LoginStepDefs {
 
     @When("the user login with valid credentials")
     public void the_user_login_with_valid_credentials() {
-        LoginPage loginPage=new LoginPage();
         String username = ConfigurationReader.get("valid_username");
         String password = ConfigurationReader.get("valid_password");
         loginPage.login(username,password);

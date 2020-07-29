@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class FilterPage extends BasePage {
-    @FindBy(xpath ="//ul/li/div/div/p[@class='special-price']//span[@class='price']")
+    @FindBy(xpath ="//*[@class='special-price']//span[@class='price']")
     public List<WebElement> listOfProducts;
 
     public void findPriceRange(String minValue, String maxValue){

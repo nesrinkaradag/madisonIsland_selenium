@@ -25,6 +25,10 @@ public class LoginPage  extends BasePage{
     @FindBy(xpath="//*[text()='This is a required field.']")
     public List<WebElement> errorMessageForEmpty;
 
+
+    @FindBy(xpath="//*[text()='Invalid login or password.']")
+    public WebElement errorMessageForInvalid;
+
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);

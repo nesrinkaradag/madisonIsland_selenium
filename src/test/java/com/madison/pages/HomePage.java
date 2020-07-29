@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {
+
     public void navigateToSubMenu(String menu, String sub) {
 
         String tabLocator = "//*[text()='" + menu + "'][@class='level0 has-children']";
