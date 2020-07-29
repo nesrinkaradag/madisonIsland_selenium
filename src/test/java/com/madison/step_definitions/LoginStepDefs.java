@@ -29,15 +29,15 @@ public class LoginStepDefs {
         String password = ConfigurationReader.get("invalid_password");
         loginPage.login(username,password);
     }
+
     @Then("the user should be able to see the error message")
     public void the_user_should_be_able_to_see_the_error_message() {
-        String errorMessage=Driver.get().findElement(By.xpath("//*[@class='error-msg']")).getText();
-        Assert.assertEquals("Invalid login or password.",errorMessage);
-
+        Assert.assertEquals("Invalid login or password.",loginPage.errorMessageForInvalid.getText());
     }
 
     @When("the user login without credentials")
     public void the_user_login_without_credentials() {
+
         loginPage.login("","");
     }
 
@@ -52,26 +52,12 @@ public class LoginStepDefs {
         String username = ConfigurationReader.get("valid_username");
         String password = ConfigurationReader.get("valid_password");
         loginPage.login(username,password);
-
     }
 
     @Then("the should be able to login successfully")
     public void the_should_be_able_to_login_successfully() {
         Assert.assertEquals("My Account",Driver.get().getTitle());
 
-
     }
-
-    /*
-    Feature: Filter
-  @filter
-  Scenario: Filter the price
-    Given the user is o the home page
-    When the user navigates to Sale, View All Sale
-    And the user filter teh price
-    Then the user should be able to see filtered products page successfully
-
-     */
-
 
 }

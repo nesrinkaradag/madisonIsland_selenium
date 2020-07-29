@@ -30,46 +30,10 @@ public abstract class BasePage {
     @FindBy(xpath = "//a[contains(@href,'http://www.ctqatest.biz/ecom/customer/account/')][contains(@title,'My Account')]")
     public List<WebElement> accountSubLink_bottomLink;
 
-    public WebElement getAccountSubLink(){
-        return accountSubLink_bottomLink.get(0);
-    }
-    public WebElement getAccountBottomLink(){
-        return accountSubLink_bottomLink.get(1);
-    }
+    @FindBy(xpath="//*[text()='Invalid login or password.']")
+    public WebElement errorMessageForInvalid;
 
-    /*
-
-
-    @FindBy (css ="#search")
-    public WebElement searchBox;
-
-    @FindBy(xpath = "//*[.='Account'][1]")
-    public WebElement accountElement;
-
-    @FindBy(xpath = "//*[@title='Log In']")
-    public WebElement loginElement;
-
-    public void navigateToModule(String tab, String module) {
-
-        String tabLocator = "//*[text()='" + tab + "'][@class='level0 has-children']";
-        String moduleLocator = "//*[text()='" + module + "'][contains(@class, 'level1')]";
-        Actions actions=new Actions(Driver.get());
-        actions.moveToElement(Driver.get().findElement(By.xpath(tabLocator))).perform();
-        Driver.get().findElement(By.xpath(moduleLocator)).click();
-
-    }
-    public void searchFor(String item){
-        Driver.get().findElement(By.cssSelector("#search")).sendKeys(item);
-        Driver.get().findElement(By.xpath("//*[@class='button search-button']")).click();
-
-    }
-
-    public void goToLoginPage(){
-        Driver.get().findElement(By.xpath("//*[.='Account'][1]")).click();
-        Driver.get().findElement(By.xpath("//*[@title='Log In']")).click();
-    }
-
-*/
-
+    @FindBy(xpath="//*[text()='This is a required field.']")
+    public List<WebElement> errorMessageForEmpty;
 
 }

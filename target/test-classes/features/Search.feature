@@ -1,5 +1,5 @@
 Feature: Testing search functionality
-  @search
+  @search @test
   Scenario Outline: Create a search activity with available product
     Given the user is on the home page
     Then user should write "<KeyName>" into search box

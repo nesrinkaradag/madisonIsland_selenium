@@ -9,7 +9,6 @@ import org.junit.Assert;
 
 public class PriceValidationStepDefs {
     HomePage homePage =new HomePage();
-
     FilterPage filterPage = new FilterPage();
 
     @Given("user should click {string} from main menu and {string} from submeonu")
@@ -17,6 +16,7 @@ public class PriceValidationStepDefs {
         Driver.get().navigate().to(ConfigurationReader.get("url"));
         homePage.navigateToSubMenu(menu, submenu);
     }
+
     @Then("user should filter products according to price range between {int} and {int}")
     public void user_should_filter_products_according_to_price_range_between_and(Integer minValue,Integer maxValue) {
         String minValueString= minValue.toString();
@@ -29,12 +29,11 @@ public class PriceValidationStepDefs {
     public void prices_should_be_betwwen_and(Integer minValue, Integer maxValue) {
         boolean flag= filterPage.checkPriceRange(minValue,maxValue);
         Assert.assertTrue(flag);
-
     }
+
     @Then("user should validate filter applied correctly")
     public void user_should_validate_filter_applied_correctly() {
 
     }
-
 
 }

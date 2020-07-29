@@ -8,6 +8,4 @@ public class CartPage extends BasePage{
     @FindBy(xpath = "//*[contains(text(), ' was added to your shopping cart.')]")
     public WebElement cartPageMessage;
 
-    //jhdfjgf
-
 }

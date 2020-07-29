@@ -1,6 +1,6 @@
 package com.madison.pages;
 
-import com.madison.utilities.BrowserUtils;
+
 import com.madison.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

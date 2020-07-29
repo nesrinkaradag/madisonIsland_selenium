@@ -1,9 +1,7 @@
 package com.madison.pages;
 
-import com.madison.utilities.BrowserUtils;
 import com.madison.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {

@@ -1,5 +1,5 @@
 Feature: Filtering functionality
-  @filter
+  @filter @test
   Scenario Outline: Choose menu and filter result than validate result
     Given user should click "<Menu>" from main menu and "<Submenu>" from submeonu
     Then user should filter products according to price range between <minValue> and <maxValue>
