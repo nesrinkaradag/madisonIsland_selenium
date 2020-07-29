@@ -50,7 +50,6 @@ public class SearchStepDefs {
 
     @Then("user should validate {string} has been added to cart")
     public void userShouldValidateHasBeenAddedToCart(String productName) {
-        System.out.println("productName = " + productName);
         Assert.assertEquals(productName+" was added to your shopping cart.",cartPage.cartPageMessage.getText());
     }
 }
